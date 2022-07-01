@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="Sales Done Assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/flexibite_ee_advance/static/src/js/pos_dashboard/amcharts.js"/>
+                <script type="text/javascript" src="/flexibite_ee_advance/static/src/js/pos_dashboard/serial.js"/>
+                <script type="text/javascript" src="/flexibite_ee_advance/static/src/js/pos_dashboard/pie.js"/>
+                <script type="text/javascript" src="/flexibite_ee_advance/static/src/js/pos_dashboard/export.js"/>
+                <script type="text/javascript" src="/flexibite_ee_advance/static/src/js/pos_dashboard/light.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/libs/blob.js/blob.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/libs/fabric.js/fabric.min.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/libs/pdfmake/pdfmake.min.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/libs/pdfmake/vfs_fonts.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/libs/jszip/jszip.min.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/libs/xlsx/xlsx.min.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/libs/FileSaver.js/FileSaver.min.js"/>
+                <script type="text/javascript" src="/flexibite_ee_advance/static/src/js/pos_dashboard/dashboard.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/jquery.dataTables.min.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/daterangepicker.js"/>
+                <script type="text/javascript"
+                        src="/flexibite_ee_advance/static/src/js/pos_dashboard/bootstrap-datepicker.js"/>
+                <link rel="stylesheet" href="/flexibite_ee_advance/static/src/css/pos_dashboard/export.css"/>
+                <link rel="stylesheet" href="/flexibite_ee_advance/static/src/css/pos_dashboard/style.css"/>
+                <link rel="stylesheet" href="/flexibite_ee_advance/static/src/css/pos_dashboard/daterangepicker.css"/>
+                <link rel="stylesheet" href="/flexibite_ee_advance/static/src/css/pos_dashboard/custom.css"/>
+            </xpath>
+        </template>
+
+        <record id="pos_sales_dashboard_id" model="ir.actions.client">
+            <field name="name">Point of sale Dashboard</field>
+            <field name="tag">pos_sales_dashboard</field>
+        </record>
+
+        <menuitem id="menu_point_dashboard" action="flexibite_ee_advance.pos_sales_dashboard_id" name="POS Dashboard"
+                  parent="point_of_sale.menu_point_root" sequence="110"
+                  groups="flexibite_ee_advance.group_pos_dashboard_manager"/>
+    </data>
+</odoo>
